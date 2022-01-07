@@ -8,8 +8,8 @@ run {
     # Activar optimizacion de backups 
     configure backup optimization on;
 
-    # Configurar politica de retencion 2 copias
-    configure retention policy to redundancy 2;
+    # Configurar politica de retencion 
+    configure retention policy to redundancy 4;
     
     # Configurar respaldo automatico de control file 
     configure controlfile autobackup format for device type disk clear;

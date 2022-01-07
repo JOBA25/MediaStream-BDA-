@@ -1,6 +1,6 @@
 -- @Autor					Lazaro Martinez Abraham Josue
 --								Barcenas Avelar Jorge Octavio
--- @Fecha					28/12/2021
+-- @Fecha					05/01/2022
 -- @Descripcion		Creación de los tablespaces
 
 connect sys/system as sysdba 
@@ -52,16 +52,6 @@ create tablespace blob_tbs
   datafile '/disk_4/app/oracle/oradata/BAPROYLA/blob_df.dbf' 
   size 2g
   autoextend on next 512m maxsize unlimited
-  extent management local autoallocate
-  segment space management auto
-  online
-  logging;
-
-prompt Tablespace blob_ix_tbs 
-create tablespace blob_ix_tbs 
-  datafile '/disk_4/app/oracle/oradata/BAPROYLA/blob_ix_df.dbf' 
-  size 1024k
-  autoextend on next 8k maxsize unlimited
   extent management local autoallocate
   segment space management auto
   online

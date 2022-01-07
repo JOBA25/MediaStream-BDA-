@@ -1,6 +1,6 @@
 -- @Autor:                  Barcenas Avelar Jorge Octavio - 
 --                          Abraham Josué Lazaro Martínez
--- @Fecha creación:         2/01/2022
+-- @Fecha creación:         05/01/2022
 -- @Descripción:            Creacion de tablas
 
 connect sys/system as sysdba 
@@ -549,5 +549,10 @@ CREATE TABLE CLIENTE.REGISTRO_REPRODUCCION(
     CONSTRAINT REGISTRO_REPRODUCCION_CONTENIDO_MULTIMEDIA_ID_FK
     FOREIGN KEY (CONTENIDO_MULTIMEDIA_ID)
     REFERENCES MULTIMEDIA.CONTENIDO_MULTIMEDIA(CONTENIDO_MULTIMEDIA_ID)
-) TABLESPACE CLIENTE_TBS
-;
+) TABLESPACE CLIENTE_TBS 
+PARTITION BY RANGE(FECHA_INICIO)
+INTERVAL(NUMTOYMINTERVAL(1,'MONTH'))(
+    PARTITION P0 VALUES LESS THAN(TO_DATE('01-01-2022','dd-mm-yyy')),
+    PARTITION P1 VALUES LESS THAN(TO_DATE('01-02-2022','dd-mm-yyy')),
+    PARTITION P2 VALUES LESS THAN(TO_DATE('01-03-2022','dd-mm-yyy'))
+);
