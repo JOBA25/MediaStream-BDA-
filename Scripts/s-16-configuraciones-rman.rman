@@ -1,0 +1,26 @@
+connect target "sys@BAPROYLA_DEDICATED as sysdba"
+
+run {
+    #configuración de número de procesos paralelos
+    configure device type disk paralelism 4
+    backup type to compressed backupset;
+    
+    # Activar optimizacion de backups 
+    configure backup optimization on;
+
+    # Configurar politica de retencion 2 copias
+    configure retention policy to redundancy 2;
+    
+    # Configurar respaldo automatico de control file 
+    configure controlfile autobackup format for device type disk clear;
+    
+    # Configuracion del formato
+    configure channel device type disk format 'ora_df%t_s%s_s%p';
+
+    # Configuración de copias de datafiles
+    CONFIGURE DATAFILE BACKUP COPIES FOR DEVICE TYPE DISK TO 2;
+
+    #especifica el tipo del destino por default 
+    CONFIGURE DEFAULT DEVICE TYPE TO DISK;
+}
+

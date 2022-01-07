@@ -1,0 +1,27 @@
+connect target "sys@BAPROYLA_DEDICATED as sysdba"
+
+run{
+    # Configuracion para poder recuperar 7 dias de backups incrementales
+    RECOVER COPY OF DATABASE WITH TAG 'media_stream_backup' UNTIL TIME 'SYSDATE-7';
+
+    # Crear backup nivel 0
+    BACKUP
+    INCREMENTAL LEVEL 0
+    TAG 'media_stream_backup'
+    DATABASE;
+
+
+    # Crear backup incremental nivel 1 
+    BACKUP 
+    INCREMENTAL LEVEL 1 
+    FOR RECOVER OF COPY WITH TAG 'media_stream_backup' 
+    DATABASE;
+    
+    # Crear backup de archive logs
+    BACKUP 
+    TAG 'media_stream_backup' 
+    ARCHIVELOG ALL NOT BACKED UP DELETE ALL INPUT;
+    
+    # Eliminacion de respaldos obsoletos
+    DELETE NOPROMPT OBSOLETE;
+}

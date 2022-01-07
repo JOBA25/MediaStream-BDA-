@@ -1,0 +1,21 @@
+BAPROYLA_DEDICATED =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = pc-alm.fi.unam)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = baproyla)
+			(SERVER = DEDICATED)
+    )
+)
+
+BAPROYLA_SHARED =
+  (DESCRIPTION =
+    (ADDRESS_LIST =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = pc-alm.fi.unam)(PORT = 1521))
+    )
+    (CONNECT_DATA =
+      (SERVICE_NAME = baproyla)
+			(SERVER = SHARED)
+    )
+)
