@@ -7,7 +7,7 @@
 export ORACLE_SID=baproyla
 
 # Creando archivo de passwords 
-orapwd FILE=${ORACLE_HOME}/dbs/orapwbaproyla force=y format=12.2 SYS=password SYSTEM=password SYSBACKUP=password
+orapwd FILE=${ORACLE_HOME}/dbs/orapwbaproyla force=y format=12.2 SYS=password SYSBACKUP=password
 
 # Creando archivo de parámetros
 touch ${ORACLE_HOME}/dbs/initbaproyla.ora 
