@@ -21,3 +21,8 @@ memory_target=768M">${ORACLE_HOME}/dbs/initbaproyla.ora
 # Solo para comprobar, se puede omitir
 # echo "Comprobando creación de archivos"
 # ls -l ${ORACLE_HOME}/dbs/*baproyla*
+
+
+sqlplus /nolog
+startup nomount 
+create spfile from pfile;
