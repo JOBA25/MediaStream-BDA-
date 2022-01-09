@@ -7,10 +7,11 @@ connect sys/hola1234* as sysdba
 
 startup nomount
 
+--whenever sqlerror exit rollback
+
 create database baproyla
 	user sys identified by system
 	user system identified by system
-	user sysbackup identified by system
 	logfile group 1 (
 		'/disk_1/app/oracle/oradata/BAPROYLA/redo01a.log',
 		'/disk_2/app/oracle/oradata/BAPROYLA/redo01b.log',
@@ -36,31 +37,24 @@ create database baproyla
 	-- datafile system
 	datafile '/disk_4/app/oracle/oradata/BAPROYLA/system01.dbf'
 		size 700m reuse autoextend on next 1024k maxsize unlimited
-		extent management local autoallocate
-  	segment space management auto
 	-- datafile sysaux
 	sysaux datafile '/disk_4/app/oracle/oradata/BAPROYLA/sysaux01.dbf'
 		size 550m reuse autoextend on next 1024k maxsize unlimited
-		extent management local autoallocate
-  	segment space management auto
 	-- datafile users
 	default tablespace users
 		datafile '/disk_4/app/oracle/oradata/BAPROYLA/users01.dbf'
 		size 500m reuse autoextend on maxsize unlimited
-		extent management local autoallocate
-  	segment space management auto
 	-- datafile temp 
 	default temporary tablespace temp
 		tempfile '/disk_4/app/oracle/oradata/BAPROYLA/temp01.dbf'
 		size 20m reuse autoextend on next 640k maxsize unlimited
-		extent management local autoallocate
-  	segment space management auto
 	-- datafile undo
 	undo tablespace undo
 		datafile '/disk_4/app/oracle/oradata/BAPROYLA/undo01.dbf'
-		size 200m reuse autoextend on next 5120k maxsize unlimited
-		extent management local autoallocate
-  	segment space management auto;
+		size 200m reuse autoextend on next 5120k maxsize unlimited;
+
+
 
 alter user sys identified by system;
 alter user system identified by system;
+alter user sysbackup identified by system;

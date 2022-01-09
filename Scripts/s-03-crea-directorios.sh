@@ -2,8 +2,8 @@
 #									Barcenas Avelar Jorge Octavio
 # @Fecha					2/01/2021
 # @Descripcion		Creación de los directorios y cambio de permisos
-
 # Función para otorgarle permisos a oracle en las carpetas
+
 function permisos(){
 	chown -R oracle:oinstall *
 	chmod -R 750 *
