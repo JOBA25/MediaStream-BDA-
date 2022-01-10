@@ -78,26 +78,26 @@ show errors
 begin
 	--          cm_id, sec_id, nombre
   p_carga_blob(1, 1, 'cancion.mp3');
-	p_carga_blob(1, 2, 'cancion.mp3');
-	p_carga_blob(2, 1, 'cancion.mp3');
-	p_carga_blob(2, 2, 'cancion.mp3');
-	p_carga_blob(3, 1, 'cancion.mp3');
-	p_carga_blob(3, 2, 'cancion.mp3');
-	p_carga_blob(3, 3, 'cancion.mp3');
-	p_carga_blob(3, 4, 'cancion.mp3');
+	--p_carga_blob(1, 2, 'cancion.mp3');
+	--p_carga_blob(2, 1, 'cancion.mp3');
+	--p_carga_blob(2, 2, 'cancion.mp3');
+	--p_carga_blob(3, 1, 'cancion.mp3');
+	--p_carga_blob(3, 2, 'cancion.mp3');
+	--p_carga_blob(3, 3, 'cancion.mp3');
+	--p_carga_blob(3, 4, 'cancion.mp3');
 
   -- Insertamos videos
-  p_carga_blob(257, 1, 'video.mp4');
-  p_carga_blob(257, 2, 'video.mp4');
-  p_carga_blob(257, 3, 'video.mp4');
-  p_carga_blob(257, 4, 'video.mp4');
-  p_carga_blob(257, 5, 'video.mp4');
-  p_carga_blob(257, 6, 'video.mp4');
-  p_carga_blob(257, 7, 'video.mp4');
-  p_carga_blob(257, 8, 'video.mp4');
-	p_carga_blob(257, 9, 'video.mp4');
+  --p_carga_blob(257, 1, 'video.mp4');
+  --p_carga_blob(257, 2, 'video.mp4');
+  --p_carga_blob(257, 3, 'video.mp4');
+  --p_carga_blob(257, 4, 'video.mp4');
+  --p_carga_blob(257, 5, 'video.mp4');
+  --p_carga_blob(257, 6, 'video.mp4');
+  --p_carga_blob(257, 7, 'video.mp4');
+  --p_carga_blob(257, 8, 'video.mp4');
+	--p_carga_blob(257, 9, 'video.mp4');
 
 end;
 /
 
-commit;
+--commit;
