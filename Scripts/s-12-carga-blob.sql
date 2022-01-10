@@ -5,6 +5,11 @@
 
 connect sys/system as sysdba
 
+set serveroutput on;
+
+create or replace directory data_dir as '/media/lazaro/dba/curso_bda/proyecto/recursos';
+grant read, write on directory data_dir to multimedia;
+
 create or replace procedure p_carga_blob (
 	p_contenido_multimedia_id in number,
   p_secuencia_id in number, 
@@ -16,14 +21,14 @@ create or replace procedure p_carga_blob (
   v_dest_blob blob;
   v_src_length number;
   v_dest_length number;
-	v_path_file varchar2 := "/unam-bda/datos";
+	v_path_file varchar2(1000) := '/media/lazaro/dba/curso_bda/proyecto/recursos/';
 begin 
   v_src_offset := 1;
   v_dest_offset := 1;
   dbms_output.put_line('Cargando ' || p_archivo);
 
 	-- Se genera la dirección del archivo con el path y el nombre
-  v_bfile := bfilename(v_path_file, p_archivo);
+  v_bfile := bfilename('DATA_DIR', p_archivo);
 
 	-- Checamos si existe y si no está abierto
   if dbms_lob.fileexists(v_bfile) = 1 and not dbms_lob.isopen(v_bfile) = 1 then 
@@ -39,7 +44,7 @@ begin
 
 	-- Obtenemos el objeto blob para modificarlo
   select contenido into v_dest_blob
-  from seccion 
+  from multimedia.seccion 
   where secuencia_id  = p_secuencia_id
   and contenido_multimedia_id = p_contenido_multimedia_id
   for update;
@@ -78,24 +83,24 @@ show errors
 begin
 	--          cm_id, sec_id, nombre
   p_carga_blob(1, 1, 'cancion.mp3');
-	--p_carga_blob(1, 2, 'cancion.mp3');
-	--p_carga_blob(2, 1, 'cancion.mp3');
-	--p_carga_blob(2, 2, 'cancion.mp3');
-	--p_carga_blob(3, 1, 'cancion.mp3');
-	--p_carga_blob(3, 2, 'cancion.mp3');
-	--p_carga_blob(3, 3, 'cancion.mp3');
-	--p_carga_blob(3, 4, 'cancion.mp3');
+	p_carga_blob(1, 2, 'cancion.mp3');
+	p_carga_blob(2, 1, 'cancion.mp3');
+	p_carga_blob(2, 2, 'cancion.mp3');
+	p_carga_blob(3, 1, 'cancion.mp3');
+	p_carga_blob(3, 2, 'cancion.mp3');
+	p_carga_blob(3, 3, 'cancion.mp3');
+	p_carga_blob(3, 4, 'cancion.mp3');
 
   -- Insertamos videos
-  --p_carga_blob(257, 1, 'video.mp4');
-  --p_carga_blob(257, 2, 'video.mp4');
-  --p_carga_blob(257, 3, 'video.mp4');
-  --p_carga_blob(257, 4, 'video.mp4');
-  --p_carga_blob(257, 5, 'video.mp4');
-  --p_carga_blob(257, 6, 'video.mp4');
-  --p_carga_blob(257, 7, 'video.mp4');
-  --p_carga_blob(257, 8, 'video.mp4');
-	--p_carga_blob(257, 9, 'video.mp4');
+  p_carga_blob(257, 1, 'video.mp4');
+  p_carga_blob(257, 2, 'video.mp4');
+  p_carga_blob(257, 3, 'video.mp4');
+  p_carga_blob(257, 4, 'video.mp4');
+  p_carga_blob(257, 5, 'video.mp4');
+  p_carga_blob(257, 6, 'video.mp4');
+  p_carga_blob(257, 7, 'video.mp4');
+  p_carga_blob(257, 8, 'video.mp4');
+	p_carga_blob(257, 9, 'video.mp4');
 
 end;
 /
