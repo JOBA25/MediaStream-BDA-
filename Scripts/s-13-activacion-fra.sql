@@ -6,7 +6,7 @@
 connect sys/system as sysdba
 
 -- Tamaño de la FRA
-alter system set db_recovery_file_dest_size = 5G scope = both;
+alter system set db_recovery_file_dest_size = 12G scope = both;
 
 -- Archivos de la FRA
 alter system set db_recovery_file_dest = '/disk_3' scope = both;
