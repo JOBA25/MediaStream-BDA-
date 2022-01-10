@@ -49,7 +49,6 @@ quota unlimited on multimedia_tbs;
 alter user cliente quota unlimited on cliente_ix_tbs;
 alter user multimedia quota unlimited on multimedia_ix_tbs;
 alter user multimedia quota unlimited on blob_tbs;
-alter user multimedia quota unlimited on blob_ix_tbs;
 
 -- Crear un rol
 -- Eliminamos el rol si existe
@@ -62,12 +61,13 @@ begin
   where role = v_rol;
 
   if v_count > 0 then
-		execute immediate 'drop role '||v_rol||;
+		execute immediate 'drop role '||v_rol;
   end if;
 end;
 /
 
 -- Creando el rol
+create role rol_administrador;
 grant create session, create table, create view, create procedure, 
 create sequence, create public synonym, create synonym, create type, 
 create trigger, create any index to rol_administrador;
@@ -75,5 +75,3 @@ create trigger, create any index to rol_administrador;
 -- Otorgando el rol a los usuarios
 grant rol_administrador to cliente;
 grant rol_administrador to multimedia;
-
-grant create session, create table to lazaro0401;

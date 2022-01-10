@@ -5,6 +5,8 @@
 
 connect sys/system as sysdba 
 
+whenever sqlerror exit rollback;
+
 -- Módulo: Cliente
 prompt Tablespace cliente_tbs
 create tablespace cliente_tbs 
@@ -56,3 +58,5 @@ create tablespace blob_tbs
   segment space management auto
   online
   logging;
+
+whenever sqlerror continue none;

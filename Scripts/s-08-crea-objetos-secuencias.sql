@@ -5,6 +5,8 @@
 
 connect sys/system as sysdba 
 
+whenever sqlerror exit rollback;
+
 -- Módulo cliente
 -- PLAN_SUBSCRIPCION_HISTORICO
 create sequence cliente.seq_plan_subscripcion_historico
@@ -199,3 +201,4 @@ create sequence multimedia.seq_codificacion_video
   nomaxvalue
   nocycle;
 
+whenever sqlerror continue none;

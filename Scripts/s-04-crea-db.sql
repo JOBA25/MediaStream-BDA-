@@ -7,7 +7,7 @@ connect sys/hola1234* as sysdba
 
 startup nomount
 
---whenever sqlerror exit rollback
+whenever sqlerror exit rollback
 
 create database baproyla
 	user sys identified by system
