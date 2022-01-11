@@ -1,4 +1,4 @@
-#connect target "sys@baproyla as sysdba"
+#connect target "sys@baproyla_dedicated as sysdba"
 
 run {
     #configuración de número de procesos paralelos
@@ -13,6 +13,7 @@ run {
     
     # Configurar respaldo automatico de control file 
     configure controlfile autobackup format for device type disk clear;
+    configure controlfile autobackup format for device type disk to 'ora_cf%F.ctl';
     
     # Configuracion del formato
     configure channel device type disk format 'ora_%c_df%t_s%s_s%p';
