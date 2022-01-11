@@ -5,6 +5,10 @@
 
 connect sys/hola1234* as sysdba
 
+#creación pfile
+create spfile from pfile;
+sgutdown
+
 startup nomount
 
 whenever sqlerror exit rollback

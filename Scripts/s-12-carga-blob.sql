@@ -7,7 +7,7 @@ connect sys/system as sysdba
 
 set serveroutput on;
 
-create or replace directory data_dir as '/media/lazaro/dba/curso_bda/proyecto/recursos';
+create or replace directory data_dir as '/mediaC/jorge/curso_dba/proyecto';
 grant read, write on directory data_dir to multimedia;
 
 create or replace procedure p_carga_blob (
@@ -21,7 +21,7 @@ create or replace procedure p_carga_blob (
   v_dest_blob blob;
   v_src_length number;
   v_dest_length number;
-	v_path_file varchar2(1000) := '/media/lazaro/dba/curso_bda/proyecto/recursos/';
+	v_path_file varchar2(1000) := '/mediaC/jorge/curso_dba/proyecto';
 begin 
   v_src_offset := 1;
   v_dest_offset := 1;

@@ -5,7 +5,7 @@
 
 connect sys/system as sysdba
 
--- 2 dispatchers, protocolo TCP
+-- 5 dispatchers, protocolo TCP
 alter system set dispatchers='(DISPATCHERS=5)(PROTOCOL=tcp)';
 
 -- 20 shared servers

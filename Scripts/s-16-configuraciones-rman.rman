@@ -1,8 +1,8 @@
-connect target "sys@BAPROYLA_DEDICATED as sysdba"
+connect target "sys@baproyla as sysdba"
 
 run {
     #configuración de número de procesos paralelos
-    configure device type disk paralelism 4
+    configure device type disk parallelism 4
     backup type to compressed backupset;
     
     # Activar optimizacion de backups 
