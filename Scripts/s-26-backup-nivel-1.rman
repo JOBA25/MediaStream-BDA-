@@ -1,0 +1,11 @@
+
+
+run{
+    
+    # Crear backup incremental nivel 1 
+    BACKUP 
+    INCREMENTAL LEVEL 1 
+    FOR RECOVER OF COPY WITH TAG 'media_stream_backup' 
+    DATABASE;
+    
+}
