@@ -4,10 +4,10 @@ run{
     
 
     # Crear backup nivel 0
-    BACKUP
-    INCREMENTAL LEVEL 0
-    TAG 'media_stream_backup'
-    DATABASE;
+    
+    backup 
+    as backupset incremental 
+    level 0 database;
     
     # Eliminacion de respaldos obsoletos
     DELETE NOPROMPT OBSOLETE;
