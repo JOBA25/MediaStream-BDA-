@@ -18,7 +18,7 @@ Prompt insercion de usuarios (usuario, tarjeta_credito, dispositivo y cargo_mens
 exec p_carga_usuario(500);
 
 Prompt insercion en tabla registro_reproduccion 
-exec p_carga_reproduccion(20000);
+exec p_carga_reproduccion(2000);
 
 commit;
 
