@@ -1,7 +1,7 @@
 -- @Autor:                  Barcenas Avelar Jorge Octavio - 
 --                          Abraham Josué Lazaro Martínez
 -- @Fecha creación:         2/01/2022
--- @Descripción:            Habiliar la archivelog mode
+-- @Descripción:            Configuración de conexiones
 
 connect sys/system as sysdba
 

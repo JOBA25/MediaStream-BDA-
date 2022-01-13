@@ -1,7 +1,7 @@
 -- @Autor					Lazaro Martinez Abraham Josue
 --								Barcenas Avelar Jorge Octavio
 -- @Fecha					28/12/2021
--- @Descripcion		Creación de los usuarios
+-- @Descripcion		Creación de las secuencias utilizadas
 
 connect sys/system as sysdba 
 

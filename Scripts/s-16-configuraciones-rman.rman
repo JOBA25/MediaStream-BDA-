@@ -1,3 +1,8 @@
+#-- @Autor:                  Barcenas Avelar Jorge Octavio - 
+#--                          Abraham Josué Lazaro Martínez
+#-- @Fecha creación:         2/01/2022
+#-- @Descripción:            Configuración de rman
+
 #connect target "sys@baproyla_dedicated as sysdba"
 
 run {
