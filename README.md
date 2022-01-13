@@ -21,11 +21,9 @@ MediaStream es una pequeña empresa global que ofrece servicios de Streaming tan
 |Num. Script|Nombre del script|Descripción|
 |:----|:----|:----|
 |0|s-00-scripts.sql|Carga DDL y DML para la base de datos|
-|1|s-01-crea-directorios.sh|Creación de los directorios para la base de datos
-|
+|1|s-01-crea-directorios.sh|Creación de los directorios para la base de datos|
 |2|s-02-crea-pwd-param.sh|Creación del archivo de parámetros y de passwords|
-|3|s-03-crea-directorios.sh|Creación de los directorios y cambio de permisos, función para otorgarle permisos a oracle en las carpetas
-|
+|3|s-03-crea-directorios.sh|Creación de los directorios y cambio de permisos, función para otorgarle permisos a oracle en las carpetas|
 |4|s-04-crea-db.sql|Creación de la base de datos|
 |5|s-05-crea-diccionario-datos.sql|Creación del diccionario de datos|
 |6|s-06-crea-tablespaces.sql|Creación de los tablespaces|
