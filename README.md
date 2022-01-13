@@ -1,16 +1,40 @@
 # MediaStream-BDA-
 
 ### Scripts
-|  Num. Script   | Nombre del script |Descripción |
-| -----------    | ----------------- |----------------- |
-| 1         | Title             |Title             |
-| 2      | Text              |Text              |
-| 3         | Title             |Title             |
-| 4      | Text              |Text              |
-| 5         | Title             |Title             |
-| 6      | Text              |Text              |
-| 7         | Title             |Title             |
-| 8      | Text              |Text              |
+|Num. Script|Nombre del script|Descripción|
+|:----|:----|:----|
+|0|s-00-scripts.sql|Carga DDL y DML para la base de datos|
+|1|s-01-crea-directorios.sh|Creación de los directorios para la base de datos
+|
+|2|s-02-crea-pwd-param.sh|Creación del archivo de parámetros y de passwords|
+|3|s-03-crea-directorios.sh|Creación de los directorios y cambio de permisos, función para otorgarle permisos a oracle en las carpetas
+|
+|4|s-04-crea-db.sql|Creación de la base de datos|
+|5|s-05-crea-diccionario-datos.sql|Creación del diccionario de datos|
+|6|s-06-crea-tablespaces.sql|Creación de los tablespaces|
+|7|s-07-crea-usuarios.sql|Creación de los usuarios|
+|8|s-08-crea-objetos-secuencias.sql|Creación de las secuencias utilizadas|
+|9|s-09-crea-objetos-tablas.sql|Creacion de tablas|
+|10|s-10-crea-objetos-indices.sql|Creacion de indices|
+|11|s-11-carga-datos.sql|Carga inicial de datos a las tablas|
+|12|s-12-carga-blob.sql|Carga de datos tipo blob|
+|13|s-13-activacion-fra.sql|Configuración para habiliar la FRA|
+|14|s-14-activacion-archivelog.sql|Habiliar la archivelog mode|
+|15|s-15-activacion-conexiones.sql|Configuración de modos de conexión|
+|16|s-16-configuraciones-rman.rman|Configuraciones de rman|
+|17|s-17-respaldo-inicial.rman|Backup inicial|
+|18|s-18-procedimientos-carga.sql|Creación de procedimientos para carga de datos|
+|19|s-19-simulacion-1.sql|Simulación de carga de datos y backup|
+|20|s-20-simulacion-2.sql|Simulación de carga de datos y backup|
+|21|s-21-simulacion-3.sql|Simulación de carga de datos y backup|
+|22|s-22-simulacion-4.sql|Simulación de carga de datos y backup|
+|23|s-23-simulacion-5.sql|Simulación de carga de datos y backup|
+|24|s-24-simulacion-6.sql|Simulación de carga de datos y backup|
+|25|s-25-simulacion-7.sql|Simulación de carga de datos y backup|
+|26|s-26-backup-nivel-0.rman|Simulación de carga de datos y backup|
+|27|s-27-backup-nivel-1.rman|Simulación de carga de datos y backup|
+|28|s-28-complete-media-recovery.rman|Comandos para media recovery|
+|29|tnsnames.txt|contenido necesario del archivo tnsnames.ora|
 
 
 
@@ -273,4 +297,15 @@
 |:----|:----|:----|:----|:----|
 |contenido|SECCION_CONTENIDO_IX|SECCION|blob_tbs|blob_tbs|
 
+### Simulación de carga diaria
+|Fecha y hora|Datos REDO producidos (MB)|Fecha de Respaldo|Tipo de backup|Espacio requerido por el backup|
+|:---:|:---:|:---:|:---:|:---:|
+|11/01/2022|17|11/01/2022|0|942MB|
+|13/01/2022|79|13/01/2022|1|385MB|
+|15/01/2022|79|15/01/2022|1|1MB|
+|16/01/2022|38|16/01/2022|1|82MB|
+|17/01/2022|38|17/01/2022|1|62MB|
+|18/01/2022|38|18/01/2022|1|35MB|
+|19/01/2022|38|19/01/2022|1|12MB|
+|20/01/2022|38|20/01/2022|0|20MB|
 
