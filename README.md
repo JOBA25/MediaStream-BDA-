@@ -1,4 +1,21 @@
 # MediaStream-BDA-
+### Colaboradores
+Lazaro Martinez Abraham Josue
+
+Barcenas Avelar Jorge Octavio
+
+### Descripción
+
+MediaStream es una pequeña empresa global que ofrece servicios de Streaming tanto de audio como de video. La empresa requiere la construcción y administración de una base de datos.
+
+### Modelo relacional 
+![](Resources/ModeloRelacionalcompleto.jpeg)
+
+### Modulo Clientes
+![](Resources/ModuloClientes.jpeg)
+
+### Modulo Multimedia
+![](Resources/ModuloMultimedia.jpeg)
 
 ### Scripts
 |Num. Script|Nombre del script|Descripción|
