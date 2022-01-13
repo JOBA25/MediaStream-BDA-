@@ -1,0 +1,11 @@
+#-- @Autor:                  Barcenas Avelar Jorge Octavio - 
+#--                          Abraham Josué Lazaro Martínez
+#-- @Fecha creación:         2/01/2022
+#-- @Descripción:            complete media recovery 
+
+run {
+    # NOARCHIVELOG mode restore datafile
+restore datafile 1;
+recover datafile 1;
+sql 'alter database datafile 1 online';
+}
